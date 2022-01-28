@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import one.digitalinovattion.padroesdeprojetospring.model.Address;
 import one.digitalinovattion.padroesdeprojetospring.model.Client;
-import one.digitalinovattion.padroesdeprojetospring.model.ClientAddress;
+import one.digitalinovattion.padroesdeprojetospring.model.AdressRepository;
 import one.digitalinovattion.padroesdeprojetospring.model.ClientRepository;
 
 @Service
@@ -17,7 +17,7 @@ public class ClientServiceImpl implements ClientService {
 	private ClientRepository clientRepository;
 	
 	@Autowired
-	private ClientAddress clientAddress;
+	private AdressRepository clientAddress;
 	
 	@Autowired
 	private ViaCepService viaCepService;
@@ -48,7 +48,8 @@ public class ClientServiceImpl implements ClientService {
 			return newAddress;
 		});
 		client.setAddress(address);
-		clientAddress.save(client);
+		clientRepository.save(client);
+		clientAddress.save(address);
 	}
 
 	@Override
