@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import one.digitalinovattion.padroesdeprojetospring.model.Client;
-import one.digitalinovattion.padroesdeprojetospring.service.ClientService;
+import one.digitalinovattion.padroesdeprojetospring.service.ClientServiceImpl;
 
 @RestController
 @RequestMapping("clients")
 public class ClientRestCrontroller {
 	
 	@Autowired
-	private ClientService clientService;
+	private ClientServiceImpl clientService;
 	
 	
 	@GetMapping

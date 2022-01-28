@@ -17,12 +17,6 @@ public class Client {
 	@ManyToOne
 	private Address address;
 	
-	public Client(long id, String name, Address address) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.address = address;
-	}
 
 	public long getId() {
 		return id;

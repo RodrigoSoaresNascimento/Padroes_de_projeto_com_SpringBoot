@@ -1,16 +1,16 @@
-package one.digitalinovattion.padroesdeprojetospring.service.impl;
+package one.digitalinovattion.padroesdeprojetospring.service;
 
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import one.digitalinovattion.padroesdeprojetospring.model.Address;
 import one.digitalinovattion.padroesdeprojetospring.model.Client;
 import one.digitalinovattion.padroesdeprojetospring.model.ClientAddress;
 import one.digitalinovattion.padroesdeprojetospring.model.ClientRepository;
-import one.digitalinovattion.padroesdeprojetospring.service.ClientService;
-import one.digitalinovattion.padroesdeprojetospring.service.ViaCepService;
 
+@Service
 public class ClientServiceImpl implements ClientService {
 
 	@Autowired
@@ -22,6 +22,7 @@ public class ClientServiceImpl implements ClientService {
 	@Autowired
 	private ViaCepService viaCepService;
 	
+	@Override
 	public Iterable <Client> findAll() {
 		// TODO Auto-generated method stub
 		return clientRepository.findAll();
